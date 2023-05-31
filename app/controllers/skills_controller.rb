@@ -7,7 +7,7 @@ class SkillsController < ApplicationController
       lat: skill.latitude,
       lng: skill.longitude
     }
-  end
+    end
   end
 
   def new
