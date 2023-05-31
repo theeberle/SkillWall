@@ -5,4 +5,4 @@
 <p> <%= @skill.user.username %> </p>
 <p>Category: <%= @skill.category %></p>
 <p>Price: <%= number_to_currency(@skill.price) %></p>
-<%= link_to "Return to skill index",  skills_index_path, class: "btn btn-primary" %>
+<%= link_to "Return to skill index",  skills_path, class: "btn btn-primary" %>
