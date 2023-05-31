@@ -6,3 +6,5 @@
 <p>Category: <%= @skill.category %></p>
 <p>Price: <%= number_to_currency(@skill.price) %></p>
 <%= link_to "Return to skill index",  skills_path, class: "btn btn-primary" %>
+
+<%= link_to "Book this skill", new_skill_booking_path(@skill), class: "btn btn-primary" %>
