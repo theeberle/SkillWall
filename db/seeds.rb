@@ -5,7 +5,24 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-bob = User.create([{ first_name: "Bob" }, { last_name: "Ross" }, {username: "BobR" }, {email: "bob.ross@gmail.com" }, {role: "contractor" }])
-michi = User.create([{ first_name: "Michael" }, { last_name: "Schumacher" }, {username: "MichaelS" }, {email: "michael.schumacher@gmail.com" }, {role: "rentor" }])
-agathe = User.create([{ first_name: "Agathe" }, { last_name: "Chopin" }, {username: "AgatheS" }, {email: "agathe.chopin@gmail.com" }, {role: "unicorn" }])
-elisa = User.create([{ first_name: "Elisa" }, { last_name: "Meyer" }, {username: "ElisaM" }, {email: "Elisa.Meyer@gmail.com" }, {role: "unicorn" }])
+require 'faker'
+
+20.times do
+  user = User.create!(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    username: Faker::Internet.username,
+    email: Faker::Internet.email,
+    password: 'password',
+    role: ['renter', 'contractor', 'unicorn'].sample
+    # Add more user attributes as needed
+  )
+  skill = Skill.create!(
+    name: Faker::Lorem.word,
+    description: Faker::Lorem.sentence,
+    category: user.role,
+    price: Faker::Number.decimal(l_digits: 2),
+    address: Faker::Address.full_address,
+    user_id: user.id
+  )
+end

@@ -1,24 +1,13 @@
-<h1>Skills</h1>
+<h1>Skills to Hire</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Category</th>
-      <th>Price</th>
-      <th>Address</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @skills.each do |skill| %>
-      <tr>
-        <td><%= skill.name %></td>
-        <td><%= skill.description %></td>
-        <td><%= skill.category %></td>
-        <td><%= number_to_currency(skill.price) %></td>
-        <td><%= skill.address %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="skill-cards">
+  <% @skills.each do |skill| %>
+    <div class="skill-card">
+      <h2><%= skill.name %></h2>
+      <p><%= skill.description %></p>
+      <p>Category: <%= skill.category %></p>
+      <p>Price: <%= number_to_currency(skill.price) %></p>
+      <p>Address: <%= skill.address %></p>
+    </div>
+  <% end %>
+</div>
