@@ -1,5 +1,5 @@
 <h1>Skills to Hire</h1>
-
+<div class="container">
 <div class="skill-cards">
   <% @skills.each do |skill| %>
     <div class="skill-card">
@@ -10,4 +10,11 @@
       <p>Address: <%= skill.address %></p>
     </div>
   <% end %>
+
+<div class="map"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+</div>
 </div>
