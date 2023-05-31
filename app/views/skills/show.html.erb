@@ -1,6 +1,8 @@
 <h2>Skill <%= @skill.name %> </h2>
+
+
 <p> <%= @skill.description %> </p>
-<p> <%= @user.name %> </p>
-<p>Category: <%= skill.category %></p>
-<p>Price: <%= number_to_currency(skill.price) %></p>
-<%= link_to "Return to skill index",  skills_index, class: "btn btn-primary" %>
+<p> <%= @skill.user.username %> </p>
+<p>Category: <%= @skill.category %></p>
+<p>Price: <%= number_to_currency(@skill.price) %></p>
+<%= link_to "Return to skill index",  skills_index_path, class: "btn btn-primary" %>
