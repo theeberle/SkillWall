@@ -1,13 +1,17 @@
 class SkillsController < ApplicationController
   def index
     @skills = Skill.all
-    # The `geocoded` scope filters only flats with coordinates
+    # The `geocoded` scope filters only skills with coordinates
     @markers = @skills.geocoded.map do |skill|
-    {
+      {
       lat: skill.latitude,
       lng: skill.longitude
     }
+    end
   end
+
+  def show
+    @skill = Skill.find(params[:id])
   end
 
   def new
@@ -29,7 +33,4 @@ class SkillsController < ApplicationController
     params.require(:skill).permit(:name)
   end
 
-  def show
-    @skill = Skill.find(params[:id])
-  end
 end
