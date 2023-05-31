@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   resources :skills do
     resources :bookings, only: [:new, :create, :edit, :update, :destroy]
   end
-  resources :users, only: [:show, :new, :create, :edit, :update, :destroy]
-  get "/dashboard", to: "dashboard#dashboard"
+
+  resources :profiles, only: [ :show ]
 end

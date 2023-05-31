@@ -17,11 +17,18 @@
       <% end %>
 
       <!-- Profile -->
-      <%= link_to root_path, class: "btn btn-outline-dark btn-floating m-3", role: "button" do %>
-        <i class="fas fa-user"></i>
+      <% if user_signed_in? %>
+        <%= link_to profile_path(current_user), class: "btn btn-outline-dark btn-floating m-3", role: "button" do %>
+          <i class="fas fa-user"></i>
+        <% end %>
+        <% else %>
+         <%= link_to new_user_session_path, class: "btn btn-outline-dark btn-floating m-3", role: "button" do %>
+          <i class="fas fa-user"></i>
+        <% end %>
       <% end %>
+
     </section>
 <%#else %>
-
+<!--new_user_registration path>
 
 </footer>
