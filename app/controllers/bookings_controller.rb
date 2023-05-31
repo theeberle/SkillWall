@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
   def new
     @booking = Booking.new
-    raise
+    @skill = Skill.find(params[:skill_id])
   end
 
   def create
