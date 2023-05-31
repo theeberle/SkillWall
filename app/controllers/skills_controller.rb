@@ -28,4 +28,8 @@ class SkillsController < ApplicationController
   def skill_params
     params.require(:skill).permit(:name)
   end
+
+  def show
+    @skill = Skill.find(params[:id])
+  end
 end
