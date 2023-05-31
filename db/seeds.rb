@@ -18,9 +18,9 @@ require 'faker'
     # Add more user attributes as needed
   )
   skill = Skill.create!(
-    name: Faker::Lorem.word,
-    description: Faker::Lorem.sentence,
-    category: user.role,
+    name: Faker::Company.profession,
+    description: Faker::Company.buzzword,
+    category: Faker::Commerce.department,
     price: Faker::Number.decimal(l_digits: 2),
     address: Faker::Address.full_address,
     user_id: user.id
