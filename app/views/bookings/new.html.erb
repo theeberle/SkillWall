@@ -1,8 +1,12 @@
 # shows that this is a booking
-<%= Booking %>
+ <h1>Booking</h1>
 # shows what the skill is
-<%= The skill is:  %>
+<h3>You want to book this skill:</h3>
+  <h3><%= @skill.skill_name %></h3>
 # shows who is the user offering the skill
+<h3>You want to book this skill:</h3>
+  <h3><%= @user.username %></h3>
 # showing an agenda over which you can choose the date and time
-
-
+<%= f.input :booking_date,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
