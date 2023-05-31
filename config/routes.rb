@@ -12,3 +12,4 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :new, :create, :edit, :update, :destroy]
   get "/dashboard", to: "dashboard#dashboard"
 end
+
