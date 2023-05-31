@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
+addresses = ["Provinzstraße 35, 13409 Berlin", "Osloer Str. 18-19, 13359 Berlin", "Lydia-Rabinowitsch-Straße 13, Berlin", "Spittelmarkt 11-12, 10117 Berlin", "Friedrichstraße 231, 10969 Berlin"]
 
 20.times do
   user = User.create!(
@@ -22,7 +23,7 @@ require 'faker'
     description: Faker::Company.buzzword,
     category: Faker::Commerce.department,
     price: Faker::Number.decimal(l_digits: 2),
-    address: Faker::Address.full_address,
+    address: addresses.sample,    #address: Faker::Address.full_address,
     user_id: user.id
   )
 end
