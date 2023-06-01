@@ -1,0 +1,82 @@
+.section-profile {
+  h2 {
+    margin-bottom: 10px;
+  }
+
+  .container-profile-listing,
+  .container-profile-booking {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+
+    .card {
+      width: 100%;
+      max-width: 400px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+      .card-skill-info {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        img {
+          width: 80px;
+          height: 80px;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+
+        .card-product-infos {
+          h2 {
+            font-size: 18px;
+            margin-bottom: 5px;
+          }
+
+          p {
+            margin-bottom: 5px;
+          }
+        }
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: #007bff;
+        color: #fff;
+        padding: 8px 16px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+    }
+  }
+}
+
+.logout {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+
+  .button-text {
+    display: inline-block;
+    background-color: #dc3545;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #1da71f;
+    }
+  }
+}
