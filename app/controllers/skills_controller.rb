@@ -1,6 +1,7 @@
 class SkillsController < ApplicationController
   def index
     @skills = Skill.all
+    @categories = Skill.pluck(:category).uniq
     # The `geocoded` scope filters only skills with coordinates
     @markers = @skills.geocoded.map do |skill|
       {
