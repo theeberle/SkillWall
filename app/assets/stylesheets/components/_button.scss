@@ -1,0 +1,31 @@
+// .buttons {
+
+// }
+
+//  .btn {
+  // Styles for the button
+.btn-turquoise {
+   // Styles for the primary button
+   background-color: $turquois;
+   text-decoration: none;
+   color: white;
+   font-weight: bold;
+   padding: 15px;
+   border-radius: 5px;
+   box-shadow: 0 0 16px rgba(0,0,0,0.1);
+   border-color: none;
+   text-align: center;
+   font-family: $body-font;
+   display: flex;
+   margin: 10px;
+
+    &:hover {
+      background-color: $greyblue;
+      color: white;
+    }
+ }
+
+ .link_to {
+  // Styles for the link
+  color: #ACC7FF;
+ }
