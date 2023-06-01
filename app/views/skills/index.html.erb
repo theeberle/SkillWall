@@ -1,5 +1,8 @@
+<div class="title">
+  <h1>Skills to Hire</h1>
+</div>
+
 <div class="container">
-<h1>Skills to Hire</h1>
 
   <div class="cards">
     <% @skills.each do |skill| %>
@@ -11,16 +14,15 @@
         <p>Category: <%= skill.category %></p>
         <p>Price: <%= number_to_currency(skill.price) %></p>
         <p>Address: <%= skill.address %></p>
-        <%= link_to "Details",  skill_path(skill), class: "btn btn-primary" %>
       </div>
+      <%= link_to "Details",  skill_path(skill), class: "btn btn-primary" %>
     </div>
     <% end %>
   </div>
 
-  <div class="map"
+  <div id="map"
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-
 </div>
