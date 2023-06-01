@@ -5,28 +5,85 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-require 'faker'
-addresses = ["Provinzstraße 35, 13409 Berlin", "Osloer Str. 18-19, 13359 Berlin", "Lydia-Rabinowitsch-Straße 13, Berlin", "Spittelmarkt 11-12, 10117 Berlin", "Friedrichstraße 231, 10969 Berlin"]
 
-20.times do
-  user = User.create!(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    username: Faker::Internet.username,
-    email: Faker::Internet.email,
-    password: 'password',
-    role: ['renter', 'contractor', 'unicorn'].sample
-    # Add more user attributes as needed
-  )
-  skill = Skill.create!(
-    name: Faker::Company.profession,
-    description: Faker::Company.buzzword,
-    category: Faker::Commerce.department,
-    price: Faker::Number.decimal(l_digits: 2),
-    address: addresses.sample,    #address: Faker::Address.full_address,
-    user_id: user.id
-  )
-end
+puts 'Seed: Deleting existing records...'
+addresses = ["Provinzstraße 35, 13409 Berlin", "Osloer Str. 18-19, 13359 Berlin", "Lydia-Rabinowitsch-Straße 13, Berlin", "Spittelmarkt 11-12, 10117 Berlin", "Friedrichstraße 231, 10969 Berlin"]
+Skill.destroy_all
+User.destroy_all
+
+puts 'Seed: Seeding...'
+
+user1 = User.create!(
+  first_name: "Yo",
+  last_name: "Kane",
+  username: "Yo",
+  email: "yo@email.com",
+  password: 'password',
+  role: 'renter'
+)
+
+user2 = User.create!(
+  first_name: "Mary",
+  last_name: "Lu",
+  username: "Mary",
+  email: "mary@email.com",
+  password: 'password',
+  role: 'contractor'
+)
+
+skill1 = Skill.create!(
+    name: "Fix your stuff",
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+    category: "woodwork",
+    price: 200,
+    address: addresses.sample,
+    user_id: user1.id
+)
+
+skill2 = Skill.create!(
+  name: "Pet sitting",
+  description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+  category: "pets",
+  price: 100,
+  address: addresses.sample,
+  user_id: user2.id
+)
+
+Booking.create!(
+  user_id: user1.id,
+  booking_date: DateTime.strptime("08/01/2018 11:00", "%m/%d/%Y %H:%M"), # Date.now
+  skill_id: skill2.id
+)
+Booking.create!(
+  user_id: user2.id,
+  booking_date: DateTime.strptime("08/01/2018 11:00", "%m/%d/%Y %H:%M"), # Date.now
+  skill_id: skill1.id
+)
+puts 'Seed: Finished seeding!'
+# require 'faker'
+# addresses = ["Provinzstraße 35, 13409 Berlin", "Osloer Str. 18-19, 13359 Berlin", "Lydia-Rabinowitsch-Straße 13, Berlin", "Spittelmarkt 11-12, 10117 Berlin", "Friedrichstraße 231, 10969 Berlin"]
+# Skill.destroy_all
+# User.destroy_all
+
+# 10.times do
+#   user = User.create!(
+#     first_name: Faker::Name.first_name,
+#     last_name: Faker::Name.last_name,
+#     username: Faker::Internet.username,
+#     email: Faker::Internet.email,
+#     password: 'password',
+#     role: ['renter', 'contractor', 'unicorn'].sample
+#     # Add more user attributes as needed
+#   )
+#   skill = Skill.create!(
+#     name: Faker::Company.profession,
+#     description: Faker::Company.buzzword,
+#     category: Faker::Commerce.department,
+#     price: Faker::Number.decimal(l_digits: 2),
+#     address: addresses.sample,    #address: Faker::Address.full_address,
+#     user_id: user.id
+#   )
+#  end
 
 # electrician = Skill.create{skill_name: "Electrician", description: "Residential/commercial repairs and installation of lighting and appliances. ⚡️💡⚡️", category_id: , price: 200}
 # pet_sitter =  Skill.create{skill_name: "Pet Sitter", description: "Caring for pets while you're sick or on holiday. 🦮🐇🐈🐟🦜🐢", category_id: , price: 50}
