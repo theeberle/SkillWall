@@ -1,5 +1,10 @@
 class SkillsController < ApplicationController
   def index
+
+    @skills = Skill.all
+    @categories = Skill.pluck(:category).uniq
+    # The `geocoded` scope filters only skills with coordinates
+
     if params[:query].present?
       sql_query = <<~SQL
         skills.name @@ :query
@@ -31,6 +36,7 @@ class SkillsController < ApplicationController
 
   def create
     @skill = Skill.new(skill_params)
+    @skill.user = current_user
     if @skill.save
       redirect_to skill_path(@skill)
     else
@@ -41,7 +47,7 @@ class SkillsController < ApplicationController
   private
 
   def skill_params
-    params.require(:skill).permit(:name)
+    params.require(:skill).permit(:name, :description, :category, :address)
   end
 
 end

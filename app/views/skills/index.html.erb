@@ -3,6 +3,19 @@
 </div>
 
 <div class="container">
+  <div class="categories-carousel">
+    <% @categories.each_with_index do |category, index| %>
+      <div class="category-container <%= index == 0 ? 'active' : '' %>">
+        <h3><%= category %></h3>
+      </div>
+    <% end %>
+  </div>
+
+  <!-- Rest of your code -->
+</div>
+
+
+<div class="container">
 
   <div class="cards">
     <% @skills.each do |skill| %>
