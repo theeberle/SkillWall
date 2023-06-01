@@ -10,20 +10,30 @@
    text-decoration: none;
    color: white;
    font-weight: bold;
-   padding: 15px;
    border-radius: 5px;
    box-shadow: 0 0 16px rgba(0,0,0,0.1);
    border-color: none;
    text-align: center;
    font-family: $body-font;
-   display: flex;
-   margin: 10px;
 
     &:hover {
       background-color: $greyblue;
       color: white;
     }
  }
+
+ .small {
+  font-size: 15px;
+  height: 20px;
+  padding: 10px;
+}
+
+.big {
+  font-size: 15px;
+  height: 20px;
+  padding: 12px;
+}
+
 
  .link_to {
   // Styles for the link
