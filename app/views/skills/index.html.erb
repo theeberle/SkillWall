@@ -3,19 +3,37 @@
 </div>
 
 <div class="container">
+  <div class="categories-carousel">
+    <div class="category-container">
+        <%= link_to "All", skills_path(), class: "category-filter-button" %>
+      </div>
+    <% @categories.each_with_index do |category, index| %>
+      <div class="category-container <%= index == 0 ? 'active' : '' %>">
+        <%= link_to category, skills_path(category: category), class: "category-filter-button" %>
+      </div>
+    <% end %>
+  </div>
+
+  <!-- Rest of your code -->
+</div>
+
+
+<div class="container">
 
   <div class="cards">
     <% @skills.each do |skill| %>
     <div class="card-product">
       <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2VydmljZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" alt="Shake-hands">
       <div class="card-product-infos">
-        <h2><%= skill.name %></h2>
-        <p>Description: <%= skill.description %></p>
-        <p>Category: <%= skill.category %></p>
-        <p>Price: <%= number_to_currency(skill.price) %></p>
-        <p>Address: <%= skill.address %></p>
+        <div class="card-product-infos-description">
+          <h2><%= skill.name %></h2>
+          <p>Category: <%= skill.category %></p>
+          <p>Price: <%= number_to_currency(skill.price) %></p>
+        </div>
+        <div class="card-product-infos-button">
+          <%= link_to "Details",  skill_path(skill), class: "btn-turquoise" %>
+        </div>
       </div>
-      <%= link_to "Details",  skill_path(skill), class: "btn btn-primary" %>
     </div>
     <% end %>
   </div>

@@ -1,10 +1,22 @@
-<h2>Skill <%= @skill.name %> </h2>
+<div class="show container">
+  <div class="skill-view">
+  <h2> <%= @skill.name %> </h2>
 
 
-<p> <%= @skill.description %> </p>
-<p> <%= @skill.user.username %> </p>
-<p>Category: <%= @skill.category %></p>
-<p>Price: <%= number_to_currency(@skill.price) %></p>
-<%= link_to "Return to skill index",  skills_path, class: "btn btn-primary" %>
+  <p> <%= @skill.description %> </p>
+  <p> <%= @skill.user.username %> </p>
+  <p>Category: <%= @skill.category %></p>
+  <p>Price: <%= number_to_currency(@skill.price) %></p>
 
-<%= link_to "Book this skill", new_skill_booking_path(@skill), class: "btn btn-primary" %>
+  <div class="buttons" >
+    <%= link_to "Return to skill index",  skills_path, class: "btn-turquoise" %>
+
+    <%= link_to "Book this skill", new_skill_booking_path(@skill), class: "btn-turquoise" %>
+  </div>
+  </div>
+    <div class="map"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+</div>

@@ -9,11 +9,14 @@
     </button> add     class="collapse navbar-collapse" id="navbarSupportedContent" for toggler below in div %>
 
     <div class="search">
-      <form class="<%= current_page?(root_path) || current_page?(root_path) ? 'd-flex' : 'd-none' %>">
-        <input class="form-control me-2" name="query" type="search" placeholder="Search Skills" aria-label="Search" value="<%= params[:query] %>">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-
+      <%= form_with url: skills_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a skill"
+        %>
+        <%= submit_tag "Search", class: "btn-turquoise " %>
+      <% end %>
     </div>
   </div>
 </nav>
