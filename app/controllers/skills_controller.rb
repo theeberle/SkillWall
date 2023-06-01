@@ -3,8 +3,13 @@ class SkillsController < ApplicationController
 
     @skills = Skill.all
     @categories = Skill.pluck(:category).uniq
-    # The `geocoded` scope filters only skills with coordinates
 
+    # filter with category
+    if params[:category].present?
+      @skills = @skills.where(category: params[:category])
+    end
+
+    # filter with Search
     if params[:query].present?
       sql_query = <<~SQL
         skills.name @@ :query
@@ -13,8 +18,6 @@ class SkillsController < ApplicationController
         OR skills.address @@ :query
       SQL
       @skills = Skill.where(sql_query, query: params[:query])
-    else
-       @skills = Skill.all
     end
 
      # The `geocoded` scope filters only skills with coordinates
