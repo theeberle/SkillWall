@@ -1,0 +1,41 @@
+// _show.scss
+.skill.container{
+  // Styles for the container
+  background-color: #FAF9F6;
+  border-color: #333333;
+  border: .5px;
+  border-radius: 5px;
+  width: 800px;
+  border: 2px;
+  border-color: black;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+ }
+
+.buttons {
+  
+}
+
+ .btn {
+  // Styles for the button
+  &.btn-primary {
+   // Styles for the primary button
+   background-color: #21F3AC;
+  }
+ }
+ .link_to {
+  // Styles for the link
+  color: #ACC7FF;
+ }
+
+ .map {
+  height: 100vh;
+  width: 100%;
+ }
+
+ .show.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
