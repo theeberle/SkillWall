@@ -7,6 +7,7 @@
   <p> <%= @skill.user.username %> </p>
   <p>Category: <%= @skill.category %></p>
   <p>Price: <%= number_to_currency(@skill.price) %></p>
+  <p>Address: <%= @skill.address %></p>
 
   <div class="buttons" >
     <%= link_to "Return to skill index",  skills_path, class: "btn-turquoise" %>

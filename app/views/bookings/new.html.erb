@@ -1,16 +1,20 @@
  <%# shows that this is a booking %>
+ <div class="booking-form">
  <h1>Booking</h1>
 <%# shows what the skill is %>
 <h3>You want to book this skill:</h3>
   <h3><%= @skill.name %></h3>
 <%# shows who is the user offering the skill %>
-<h3>You want to book this skill:</h3>
   <h3><%= @skill.user.username %></h3>
 <%# showing an agenda over which you can choose the date and time %>
-
-<%= simple_form_for([@skill, @booking]) do |f| %>
-  <%= f.input :booking_date,
-            as: :string,
-            input_html: { data: { controller: "datepicker" } } %>
-  <%= f.button :submit, class: "btn-turquoise" %>
-<% end %>
+ <div class="row justify-content-center">
+  <div class="col-12 col-md-6 col-lg-4">
+    <%= simple_form_for([@skill, @booking]) do |f| %>
+      <%= f.input :booking_date,
+                as: :string,
+                input_html: { data: { controller: "datepicker" } } %>
+    <%= f.button :submit, class: "btn-turquoise" %>
+  <% end %>
+   </div>
+  </div>
+</div>
