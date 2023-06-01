@@ -8,10 +8,10 @@
   <p>Category: <%= @skill.category %></p>
   <p>Price: <%= number_to_currency(@skill.price) %></p>
 
-  <div class="buttons">
-    <%= link_to "Return to skill index",  skills_path, class: "btn btn-primary" %>
+  <div class="buttons" >
+    <%= link_to "Return to skill index",  skills_path, class: "btn-turquoise" %>
 
-    <%= link_to "Book this skill", new_skill_booking_path(@skill), class: "btn btn-primary" %>
+    <%= link_to "Book this skill", new_skill_booking_path(@skill), class: "btn-turquoise" %>
   </div>
   </div>
     <div class="map"
