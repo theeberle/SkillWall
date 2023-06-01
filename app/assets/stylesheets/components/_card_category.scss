@@ -55,6 +55,9 @@
 
 .card-product {
   position: relative;
+  border: .5px;
+  border-color: black;
+  box-shadow: 1px;
   /* Add other card styles as needed */
 }
 
@@ -81,6 +84,7 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+  background-color: white;
 }
 
 .card-product-infos-button {
