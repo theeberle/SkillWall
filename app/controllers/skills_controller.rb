@@ -20,6 +20,7 @@ class SkillsController < ApplicationController
 
   def create
     @skill = Skill.new(skill_params)
+    @skill.user = current_user
     if @skill.save
       redirect_to skill_path(@skill)
     else
@@ -30,7 +31,7 @@ class SkillsController < ApplicationController
   private
 
   def skill_params
-    params.require(:skill).permit(:name)
+    params.require(:skill).permit(:name, :description, :category, :address)
   end
 
 end
