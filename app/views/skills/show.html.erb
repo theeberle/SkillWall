@@ -1,8 +1,7 @@
 <div class="show container">
   <div class="skill-view">
+  <%= image_tag ["Skills_fotos/carpenter.jpg", "Skills_fotos/accountant.jpg", "Skills_fotos/actor.jpg","Skills_fotos/bodyguard.jpg", "Skills_fotos/magician.jpg"].sample, class: "skill-image" %>
   <h2> <%= @skill.name %> </h2>
-
-
   <p> <%= @skill.description %> </p>
   <p> <%= @skill.user.username %> </p>
   <p>Category: <%= @skill.category %></p>

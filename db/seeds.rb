@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts 'Seed: Deleting existing records...'
-addresses = ["Provinzstraße 35, 13409 Berlin", "Osloer Str. 18-19, 13359 Berlin", "Lydia-Rabinowitsch-Straße 13, Berlin", "Spittelmarkt 11-12, 10117 Berlin", "Friedrichstraße 231, 10969 Berlin"]
+addresses = ["Amfortasweg 31, 12167 Berlin","Potsdamer Str. 102, 10785 Berlin", "Residenzstraße 63, 13409 Berlin","Ernst-Reuter-Platz, 10587 Berlin","Huttenstraße 69 - 70, 10553 Berlin", "Provinzstraße 35, 13409 Berlin", "Osloer Str. 18-19, 13359 Berlin", "Lydia-Rabinowitsch-Straße 13, Berlin", "Spittelmarkt 11-12, 10117 Berlin", "Friedrichstraße 231, 10969 Berlin"]
 Skill.destroy_all
 User.destroy_all
 
@@ -30,6 +30,30 @@ user2 = User.create!(
   password: 'password',
   role: 'contractor'
 )
+user3 = User.create!(
+  first_name: "Hanna",
+  last_name: "Banana",
+  username: "Hanna",
+  email: "hanna@email.com",
+  password: 'password',
+  role: 'renter'
+)
+user4 = User.create!(
+  first_name: "Ola",
+  last_name: "Bola",
+  username: "Bola",
+  email: "bola@email.com",
+  password: 'password',
+  role: 'contractor'
+)
+user5 = User.create!(
+  first_name: "Bro",
+  last_name: "Brewski",
+  username: "Brewski",
+  email: "brewski@email.com",
+  password: 'password',
+  role: 'renter'
+)
 
 skill1 = Skill.create!(
     name: "Fix your stuff",
@@ -48,7 +72,87 @@ skill2 = Skill.create!(
   address: addresses.sample,
   user_id: user2.id
 )
+skill3 = Skill.create!(
+  name: "Let me act for you better!",
+  description: "I am a professional actor and I can act for you bettwe then the other guy!",
+  category: "art",
+  price: 100,
+  address: addresses.sample,
+  user_id: user4.id
+)
+skill4 = Skill.create!(
+  name: "Let me act for you!",
+  description: "I am a professional actor and I can act for you!",
+  category: "art",
+  price: 100,
+  address: addresses.sample,
+  user_id: user1.id
+)
+skill5 = Skill.create!(
+  name: "Fix your wallet!",
+  description: "No more YouTube! Get financial advice from real professionals. 💶 ",
+  category: "finance",
+  price: 100,
+  address: addresses.sample,
+  user_id: user3.id
+)
 
+skill6 = Skill.create!(
+  name: "Let me act for you!",
+  description: "Beauty is within the eye of the beholder. 📸",
+  category: "art",
+  price: 100,
+  address: addresses.sample,
+  user_id: user2.id
+)
+skill7 = Skill.create!(
+  name: "Get fit for summer!",
+  description: "Helps you get in shape and provides motivation and accountability. 💪",
+  category: "fitness",
+  price: 100,
+  address: addresses.sample,
+  user_id: user5.id
+)
+skill8 = Skill.create!(
+  name: "Frient for rent!",
+  description: "Proves to the world that you have support, provides you cover for rejecting a date, helps you get out of awkward conversations at company parties. Has your back! 👊",
+  category: "other",
+  price: 100,
+  address: addresses.sample,
+  user_id: user2.id
+)
+skill9 = Skill.create!(
+  name: "Cooking for busy people",
+  description: "Cooking made easy and fun! 👊",
+  category: "household",
+  price: 100,
+  address: addresses.sample,
+  user_id: user2.id
+)
+skill10 = Skill.create!(
+  name: "Cleaning queen",
+  description: "Making your flat sparkling new!",
+  category: "household",
+  price: 100,
+  address: addresses.sample,
+  user_id: user2.id
+)
+skill11 = Skill.create!(
+  name: "Cleaning king",
+  description: "No stress, all cleaned!",
+  category: "household",
+  price: 90,
+  address: addresses.sample,
+  user_id: user3.id
+)
+skill11 = Skill.create!(
+  name: "Travel buddy",
+  description: "Let's go to the beach!",
+  category: "travel",
+  price: 90,
+  address: addresses.sample,
+  user_id: user4.id
+)
 Booking.create!(
   user_id: user1.id,
   booking_date: DateTime.strptime("08/01/2018 11:00", "%m/%d/%Y %H:%M"), # Date.now
@@ -58,6 +162,22 @@ Booking.create!(
   user_id: user2.id,
   booking_date: DateTime.strptime("08/01/2018 11:00", "%m/%d/%Y %H:%M"), # Date.now
   skill_id: skill1.id
+)
+
+Booking.create!(
+  user_id: user1.id,
+  booking_date: DateTime.strptime("08/01/2018 11:00", "%m/%d/%Y %H:%M"), # Date.now
+  skill_id: skill10.id
+)
+Booking.create!(
+  user_id: user1.id,
+  booking_date: DateTime.strptime("08/01/2018 11:00", "%m/%d/%Y %H:%M"), # Date.now
+  skill_id: skill8.id
+)
+Booking.create!(
+  user_id: user1.id,
+  booking_date: DateTime.strptime("08/01/2018 11:00", "%m/%d/%Y %H:%M"), # Date.now
+  skill_id: skill7.id
 )
 puts 'Seed: Finished seeding!'
 # require 'faker'

@@ -33,6 +33,10 @@ skip_before_action :authenticate_user!, only: :index
 
   def show
     @skill = Skill.find(params[:id])
+    @markers = [  {
+      lat: @skill.latitude,
+      lng: @skill.longitude
+    }]
   end
 
   def new

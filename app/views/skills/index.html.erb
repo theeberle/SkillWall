@@ -19,11 +19,11 @@
 
 
 <div class="container">
-
   <div class="cards">
     <% @skills.each do |skill| %>
     <div class="card-product">
-      <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2VydmljZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" alt="Shake-hands">
+    <%# <%= image_tag ["Skills_fotos/carpenter.jpg", "Skills_fotos/accountant.jpg", "Skills_fotos/actor.jpg","Skills_fotos/bodyguard.jpg", "Skills_fotos/magician.jpg"].sample%>
+     <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2VydmljZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" alt="Shake-hands"> 
       <div class="card-product-infos">
         <div class="card-product-infos-description">
           <h2><%= skill.name %></h2>
