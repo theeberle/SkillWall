@@ -1,11 +1,14 @@
 <div class="skill-form">
 <h1>Add your skill!</h1>
-<%= simple_form_for(@skill) do |f| %>
-  <%= f.input :name, label: "Skill" %>
-  <%= f.input :category %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.input :address %>
-  <%= f.button :submit, class: "btn-turquoise" %>
-<% end %>
-</div>
+  <%= simple_form_for(@skill) do |f| %>
+    <%= f.input :name, label: "Skill" %>
+    <%= f.input :category %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    <%= f.input :address %>
+    <%= f.input :photo_url, label: "Photo URL" %>
+    <%= image_tag(@skill.photo_url || 'https://images.unsplash.com/photo-1589652717521-10c0d092dea9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2tpbGx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60') %>
+
+    <%= button_tag 'Create Skill', type: 'submit' %>
+  <% end %>
+ </div>

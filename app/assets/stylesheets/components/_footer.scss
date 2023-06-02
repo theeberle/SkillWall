@@ -1,13 +1,49 @@
-.footer {
-  background-color: white;
-  position: sticky;
-  bottom: 0px;
+// .footer {
+//   background-color: white;
+//   position: sticky;
+//   // to stick to the bottom remove this line but "app" like functionality will be lost
+//   //bottom: 0px;
 
-}
-.home{
+// }
+// .home{
+//   padding: 10px;
+// }
+// .container {
+//   display: flex;
+//   justify-content: center;
+// }
+
+
+// new styling without bstrap
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #f8f9fa;
   padding: 10px;
 }
-.container {
+
+.footer .container {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.footer .btn {
+  margin: 0 5px;
+}
+
+.footer .btn i {
+  font-size: 20px;
+}
+
+.footer .btn-outline-dark {
+  color: #343a40;
+  border-color: #343a40;
+}
+
+.footer .btn-outline-dark:hover {
+  color: #fff;
+  background-color: #343a40;
 }

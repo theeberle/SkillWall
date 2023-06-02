@@ -4,9 +4,7 @@
     <%= link_to root_path, class:"navbar-brand" do %>
       <%= image_tag "SkillWallLogo.png", alt: "Logo" %>
     <% end %>
-    <%# <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="faltruese" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button> add     class="collapse navbar-collapse" id="navbarSupportedContent" for toggler below in div %>
+
 
     <div class="search">
       <%= form_with url: skills_path, method: :get, class: "d-flex" do %>
@@ -15,7 +13,7 @@
           class: "form-control",
           placeholder: "Find a skill"
         %>
-        <%= submit_tag "Search", class: "btn-turquoise" %>
+        <%= submit_tag "Search", class: "btn-turquoise"%>
       <% end %>
     </div>
   </div>
