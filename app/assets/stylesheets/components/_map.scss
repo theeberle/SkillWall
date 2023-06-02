@@ -1,8 +1,19 @@
 #map{
-  width: 80%;
+  width: 60%;
   height: 200px;
   position: absolute;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+
 }
+// // map on index page
+// #map {
+//   width: 100%; /* Adjust the width as needed */
+//   height: 400px; /* Adjust the height as needed */
+//   border-radius: 8px;
+//   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+// }
 
 .mapboxgl-popup {
   max-width: 200px;
