@@ -16,13 +16,20 @@
 
 // new styling without bstrap
 
-.footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #f8f9fa;
-  padding: 10px;
-}
+.page-container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+
+ }
+
+// .footer {
+//   position: fixed;
+//   bottom: 0;
+//   width: 100%;
+//   background-color: #f8f9fa;
+//   padding: 10px;
+// }
 
 .footer .container {
   display: flex;

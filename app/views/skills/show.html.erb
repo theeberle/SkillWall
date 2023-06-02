@@ -11,7 +11,7 @@
   <p>Address: <%= @skill.address %></p>
 <%# trying to add photo placeholder logic %>
   <% if @skill.photo_url.present? %>
-      <%= image_tag @skill.photo_url %>
+      <%= image_tag @skill.photo_url, class: "skill-image" %>
     <% else %>
       <%= image_tag 'ahttps://images.unsplash.com/photo-1589652717521-10c0d092dea9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2tpbGx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60' %>
     <% end %>
