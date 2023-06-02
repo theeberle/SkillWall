@@ -59,6 +59,7 @@ Booking.create!(
   booking_date: DateTime.strptime("08/01/2018 11:00", "%m/%d/%Y %H:%M"), # Date.now
   skill_id: skill1.id
 )
+
 puts 'Seed: Finished seeding!'
 # require 'faker'
 # addresses = ["Provinzstraße 35, 13409 Berlin", "Osloer Str. 18-19, 13359 Berlin", "Lydia-Rabinowitsch-Straße 13, Berlin", "Spittelmarkt 11-12, 10117 Berlin", "Friedrichstraße 231, 10969 Berlin"]
