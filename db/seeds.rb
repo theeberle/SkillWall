@@ -417,6 +417,78 @@ skill30 = Skill.create!(
   user_id: user8.id,
   photo_url: 'https://cdn.pixabay.com/photo/2020/05/26/09/44/mockup-5222446_1280.jpg'
 )
+skill31 = Skill.create!(
+  name: "Some filler cool skill",
+  description: "When you run out of ideas.",
+  category: "Future",
+  price: 2000,
+  address: addresses.sample,
+  user_id: user8.id,
+  photo_url: 'https://images.unsplash.com/photo-1674574124473-e91fdcabaefc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxzZWFyY2h8MXx8ZnV0dXJlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60'
+)
+skill32 = Skill.create!(
+  name: "Learn to drive fast",
+  description: "When you run out of ideas.",
+  category: "Cars",
+  price: 2000,
+  address: addresses.sample,
+  user_id: user8.id,
+  photo_url: 'https://images.unsplash.com/photo-1674574124473-e91fdcabaefc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxzZWFyY2h8MXx8ZnV0dXJlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60'
+)
+skill33 = Skill.create!(
+  name: "Learn to drive fast",
+  description: "When you run out of ideas.",
+  category: "Tools",
+  price: 2000,
+  address: addresses.sample,
+  user_id: user8.id,
+  photo_url: 'https://images.unsplash.com/photo-1581783898377-1c85bf937427?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dG9vbHN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60'
+)
+skill35 = Skill.create!(
+  name: "Learn to drive fast",
+  description: "When you run out of ideas.",
+  category: "Lifestyle",
+  price: 2000,
+  address: addresses.sample,
+  user_id: user8.id,
+  photo_url: 'https://images.unsplash.com/photo-1581783898377-1c85bf937427?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dG9vbHN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60'
+)
+skill36 = Skill.create!(
+  name: "Some filler cool skill",
+  description: "When you run out of ideas.",
+  category: "Future",
+  price: 2000,
+  address: addresses.sample,
+  user_id: user8.id,
+  photo_url: 'https://images.unsplash.com/photo-1674574124473-e91fdcabaefc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxzZWFyY2h8MXx8ZnV0dXJlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60'
+)
+skill37 = Skill.create!(
+  name: "Learn to drive fast",
+  description: "When you run out of ideas.",
+  category: "Cars",
+  price: 2000,
+  address: addresses.sample,
+  user_id: user8.id,
+  photo_url: 'https://images.unsplash.com/photo-1674574124473-e91fdcabaefc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxzZWFyY2h8MXx8ZnV0dXJlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60'
+)
+skill38 = Skill.create!(
+  name: "Learn to drive fast",
+  description: "When you run out of ideas.",
+  category: "Tools",
+  price: 2000,
+  address: addresses.sample,
+  user_id: user8.id,
+  photo_url: 'https://images.unsplash.com/photo-1581783898377-1c85bf937427?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dG9vbHN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60'
+)
+skill39 = Skill.create!(
+  name: "Learn to drive fast",
+  description: "When you run out of ideas.",
+  category: "Lifestyle",
+  price: 2000,
+  address: addresses.sample,
+  user_id: user8.id,
+  photo_url: 'https://images.unsplash.com/photo-1581783898377-1c85bf937427?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dG9vbHN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60'
+)
 
 Booking.create!(
   user_id: user1.id,
