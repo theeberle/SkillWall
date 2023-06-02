@@ -26,7 +26,10 @@ skip_before_action :authenticate_user!, only: :index
     @markers = @skills.geocoded.map do |skill|
       {
         lat: skill.latitude,
-        lng: skill.longitude
+        lng: skill.longitude,
+        # added for the popup:
+        info_window_html: render_to_string(partial: "info_window", locals: {skill: skill}),
+        marker_html: render_to_string(partial: "marker")
       }
     end
   end
