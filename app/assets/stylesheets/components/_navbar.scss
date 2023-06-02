@@ -38,12 +38,10 @@
   align-items: center;
 }
 
-.search form {
-  display: flex;
-  align-items: center;
-}
-
 .search .form-control {
   width: 500px; /* Adjust the width as needed */
-  margin-right: 10px; /* Add space between the input field and submit button */
+
+.navbar-brand img {
+  width: 130px;
+  margin: 0 8px;
 }
