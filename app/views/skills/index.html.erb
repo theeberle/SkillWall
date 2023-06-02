@@ -4,11 +4,11 @@
 
 <div class="container">
   <div class="categories-carousel">
-    <div class="category-container">
-        <%= link_to "All", skills_path(), class: "category-filter-button" %>
-      </div>
-    <% @categories.each_with_index do |category, index| %>
-      <div class="category-container <%= index == 0 ? 'active' : '' %>">
+    <div class="category-container <%= params[:category].blank? ? 'active' : '' %>">
+      <%= link_to "All", skills_path(), class: "category-filter-button" %>
+    </div>
+    <% @categories.each do |category| %>
+      <div class="category-container <%= params[:category] == category ? 'active' : '' %>">
         <%= link_to category, skills_path(category: category), class: "category-filter-button" %>
       </div>
     <% end %>
