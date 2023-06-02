@@ -21,20 +21,25 @@
 .category-container {
   display: inline-block;
   padding: 8px 16px;
-  background-color: #f2f2f2;
+  background-color: $darkgrey;
+  color: white;
   border-radius: 16px;
   margin-right: 8px;
 }
 
 .category-filter-button {
   text-decoration: none;
-  color: #333;
+  color: white;
   font-weight: bold;
+
+  &:hover {
+    color: black;
+  }
 }
 
 .category-container.active {
-  background-color: #40c9c6;
-  color: #fff;
+  background-color: $turquois;
+  color: white;
 }
 
 // cards on index page
@@ -80,7 +85,7 @@
   margin-top: auto;
   display: flex;
   justify-content: flex-end;
-  background-color: #44fcdd;
+  background-color: $turquois;
   text-decoration: none;
   color: white;
   font-weight: bold;
