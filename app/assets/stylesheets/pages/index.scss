@@ -1,0 +1,126 @@
+// Import page-specific CSS files here.
+@import "home";
+@import "show";
+// Datepicker
+@import "booking";
+@import "listing";
+@import "newbooking";
+
+
+.title h1 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-top: 20px;
+}
+
+// carousel style
+.container {
+  /* Your container styles */
+}
+
+.categories-carousel {
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.categories-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.category-container {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #f2f2f2;
+  border-radius: 16px;
+  margin-right: 8px;
+}
+
+.category-filter-button {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.category-container.active {
+  background-color: #40c9c6;
+  color: #fff;
+}
+
+// cards on index page
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card-product {
+  width: calc(50% - 12px); /* Adjust width as needed */
+  margin-bottom: 24px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.card-product img {
+  width: 100%;
+  height: 200px; /* Adjust height as needed */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-product-infos {
+  flex-grow: 1;
+}
+
+.card-product-infos-description h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.card-product-infos-description p {
+  margin-bottom: 4px;
+}
+
+.card-product-infos-button {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+  background-color: #44fcdd;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.card-product-infos-button:hover {
+  background-color: $greyblue;
+  color: white;
+}
+
+
+// map on index page
+#map {
+  width: 100%; /* Adjust the width as needed */
+  height: 400px; /* Adjust the height as needed */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
