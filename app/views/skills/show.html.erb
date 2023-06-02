@@ -1,5 +1,6 @@
 <div class="show container">
   <div class="skill-view">
+
   <h2> <%= @skill.name %> </h2>
 
 
@@ -8,6 +9,12 @@
   <p>Category: <%= @skill.category %></p>
   <p>Price: <%= number_to_currency(@skill.price) %></p>
   <p>Address: <%= @skill.address %></p>
+<%# trying to add photo placeholder logic %>
+  <% if @skill.photo_url.present? %>
+      <%= image_tag @skill.photo_url %>
+    <% else %>
+      <%= image_tag 'ahttps://images.unsplash.com/photo-1589652717521-10c0d092dea9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2tpbGx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60' %>
+    <% end %>
 
   <div class="buttons" >
     <%= link_to "Return to skill index",  skills_path, class: "btn-turquoise big" %>
@@ -15,6 +22,7 @@
     <%= link_to "Book this skill", new_skill_booking_path(@skill), class: "btn-turquoise big" %>
   </div>
   </div>
+
     <div class="map"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"

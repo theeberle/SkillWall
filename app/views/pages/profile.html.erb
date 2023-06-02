@@ -1,60 +1,81 @@
 
  <div class="container-profile-show" >
-  <br>
-  <h2><strong>Hello, <%= @user.username %>!</strong></h2><br>
-  <div class="profile-image">
-    <%# <%= image_tag @user.photo %>
+   <br>
+    <h1>Hello, <strong><%= @user.username %>!</strong></h1>
+    <br>
+    <div class="profile-image">
+     <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVvcGxlJTIwcHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=400&q=60" alt="user_photo">
+  </div>
+   <%= link_to "Log out",
+  destroy_user_session_path,
+  data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+  class: "btn btn-turquoise"
+%>
+
+<div class="divider"></div>
+
+<div class="container">
+  <div class="column">
+    <div class="card">
+      <div class="section-profile">
+        <h2>Your Latest Listings</h2>
+        <div class="container-profile-listing">
+          <% if @skills.any? %>
+
+            <div class="card">
+              <% @skills.each do |skill| %>
+
+                <div class="card-skill-info">
+                  <%= image_tag(skill.photo_url) %>
+                  <div class="card-product-infos">
+                    <h2><%= skill.name %></h2>
+                    <p class="category-tag"><%= skill.category %></p>
+                    <%# <p>Price: <%= number_to_currency(skill.price)</p>  %>
+                    <p>Address: <%= skill.address %></p>
+                  </div>
+                  <div class="card-button">
+                  <%= link_to "Details", skill_path(skill), class: "btn btn-primary" %>
+                   </div>
+                 </div>
+
+              <% end %>
+            </div>
+          <% else %>
+            <p>You don't have any listings!</p>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="section-profile">
-    <h2>Your Latest Listings</h2>
-    <div class="container-profile-listing">
-      <% if @skills.any? %>
-        <div class="card">
-          <% @skills.each do |skill| %>
-            <div class="card-skill-info">
-              <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2VydmljZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" alt="Shake-hands">
-              <div class="card-product-infos">
-                <h2><%= skill.name %></h2>
-                <p>Description: <%= skill.description %></p>
-                <p>Category: <%= skill.category %></p>
-                <p>Price: <%= number_to_currency(skill.price) %></p>
-                <p>Address: <%= skill.address %></p>
-              </div>
-              <%= link_to "Details", skill_path(skill), class: "btn btn-primary" %>
-            </div>
-          <% end %>
-        </div>
-      <% else %>
-         <p>You don't have any listings!</p>
-      <% end %>
-    </div>
+  <div class="column">
+    <div class="card">
+      <div class="section-booking">
+        <h2>Your Latest Bookings</h2>
+        <div class="container-profile-booking">
+          <% if @bookings.any? %>
+            <div class="card">
+              <% @bookings.each do |booking| %>
 
-<div class="section-booking">
-    <h2>Your Latest Bookings</h2>
-      <div class="container-profile-booking">
-      <% if @bookings.any? %>
-        <div class="card">
-          <% @bookings.each do |booking| %>
-            <div class="card-skill-info">
-              <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2VydmljZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" alt="Shake-hands">
-              <div class="card-product-infos">
-                <h2><%= booking.skill.name %></h2>
-              </div>
-              <%= link_to "Details", skill_path(booking), class: "btn btn-primary" %>
+                <div class="card-skill-info">
+                  <%= image_tag(booking.skill.photo_url) %>
+                  <div class="card-product-infos">
+                    <h2><%= booking.skill.name %></h2>
+                    <p class="category-tag"><%= booking.skill.category %></p>
+                   <p><%= booking.booking_date.strftime("%d-%m-%Y") %></p>
+                   <p><%= number_to_currency(booking.skill.price) %></p>
+                  </div>
+                  <%# <div class="card-button">
+                  <%= link_to "Details", skill_path(booking), class: "btn btn-primary" %>
+                    <%# </div> %>
+                </div>
+              <% end %>
             </div>
+          <% else %>
+            <p>You don't have any bookings!</p>
           <% end %>
         </div>
-      <% else %>
-      <p> You don't have any listings!</p>
-      <% end %>
+      </div>
     </div>
-    </div>
+  </div>
 </div>
-
-
-
-  <%= link_to "Delete",
-    destroy_user_session_path,
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-  %>

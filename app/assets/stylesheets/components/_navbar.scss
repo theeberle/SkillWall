@@ -1,14 +1,49 @@
+// .navbar {
+//   justify-content: space-between;
+//   background: white;
+// }
+
+// .navbar .navbar-collapse {
+//   flex-grow: 0;
+// }
+
+
+// .navbar-brand img {
+//   width: 50px;
+//   margin: 0 8px;
+// }
+
+// to add longer searchbar
+// .search{
+//   width: 80%;
+//   margin: 0 8px;
+// }
+
+/// updated navbar
+
 .navbar {
+  display: flex;
   justify-content: space-between;
-  background: white;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px;
 }
-
-.navbar .navbar-collapse {
-  flex-grow: 0;
-}
-
 
 .navbar-brand img {
-  width: 50px;
-  margin: 0 8px;
+  height: 60px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+}
+
+.search form {
+  display: flex;
+  align-items: center;
+}
+
+.search .form-control {
+  width: 500px; /* Adjust the width as needed */
+  margin-right: 10px; /* Add space between the input field and submit button */
 }

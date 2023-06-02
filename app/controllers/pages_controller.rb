@@ -3,9 +3,9 @@ class PagesController < ApplicationController
 
   def profile
     @user = current_user
-    @bookings = @user.bookings
+   # @bookings = @user.bookings
+    @bookings = @user.bookings.includes(:skill) # Load associated skill data
     @skills = @user.skills
-
-
   end
+
 end
